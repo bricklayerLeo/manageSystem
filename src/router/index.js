@@ -78,20 +78,20 @@ const router = new Router({
   ]
 })
 // 路由的前置守卫
-router.beforeEach((to, from, next) => {
-  // console.log(to, from)
-  if (to.name === 'login') {
-    next()
-  } else {
-    const token = sessionStorage.getItem('token')
-    if (!token) {
-      router.push({
-        'name': 'login'
-      })
-      Message.warning('请先登录')
-      return
-    }
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   // console.log(to, from)
+//   if (to.name === 'login') {
+//     next()
+//   } else {
+//     const token = sessionStorage.getItem('token')
+//     if (!token) {
+//       router.push({
+//         'name': 'login'
+//       })
+//       Message.warning('请先登录')
+//       return
+//     }
+//     next()
+//   }
+// })
 export default router
